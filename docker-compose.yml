@@ -1,0 +1,14 @@
+version: "3.1"
+
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    tty: true
+    stdin_open: true
+    volumes:
+      - .:/problems
+      - .bashrc:/root/.bashrc
+      - ./cookie.jar:/root/.local/share/online-judge-tools/cookie.jar
+      - ./.gitconfig:/root/.gitconfig
