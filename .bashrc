@@ -9,12 +9,11 @@ function ojd () {
 function ojs () {
   contest_num=`echo "$PWD" | awk -F '/' '{print $(NF-1)}'`
   problem_num=`echo "$PWD" | awk -F '/' '{print $NF}'`
-  oj s https://atcoder.jp/contests/${contest_num}/tasks/${contest_num}_${problem_num} $1
+  oj s https://atcoder.jp/contests/${contest_num}/tasks/${contest_num}_${problem_num} $1 -l=dart
 }
 
 function ojt () {
-  lang=${2:-ruby}
-  oj t -d tests -c "$lang $1"
+  oj t -d tests -c "dart $1"
 }
 
 alias g="git"
