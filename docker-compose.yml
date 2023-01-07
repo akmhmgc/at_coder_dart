@@ -9,6 +9,4 @@ services:
     stdin_open: true
     volumes:
       - .:/problems
-      - .bashrc:/root/.bashrc
       - ./cookie.jar:/root/.local/share/online-judge-tools/cookie.jar
-      - ./.gitconfig:/root/.gitconfig
