@@ -65,4 +65,10 @@
   gr = grep
   gn = grep -n
 	push-f = push --force-with-lease
+  # blamepr
+  blamepr = "!f() { gh pr view -w `git log --merges --oneline --reverse --ancestry-path $1...develop | grep 'Merge pull request #' | head -n 1 | cut -f5 -d' ' | sed -e 's%#%%'`; }; f"
+  # c
+  brcp = "!f() { git branch --format='%(refname:short)' | sed -n $1p | pbcopy; }; f"
+  po = push origin head
+  wip = commit --allow-empty -m '[WIP]'
 
